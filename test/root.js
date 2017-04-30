@@ -16,7 +16,8 @@ beforeEach(function(done) {
     }
 
     Object.keys(window).forEach(key => {
-      global[key] = window[key];
+      if (key != 'console')
+          global[key] = window[key];
     });
 
     return done();
